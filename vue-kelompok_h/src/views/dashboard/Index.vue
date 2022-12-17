@@ -20,7 +20,19 @@
                     <div class="card-body">
                         DASHBOARD
                         <hr>
-                        Selamat Datang <strong>{{ user.name }}</strong>
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="https://assets.kompasiana.com/items/album/2021/03/24/blank-profile-picture-973460-1280-605aadc08ede4874e1153a12.png?t=o&v=770" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{user.name}}</h5>
+                                <p class="card-text">{{user.email}}</p>
+                                <router-link
+                                :to="{
+                                    name: 'update',
+                                    params: { id: user.id },
+                                }"
+                                class="btn btn-sm btn-primary mr-1">EDIT</router-link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
