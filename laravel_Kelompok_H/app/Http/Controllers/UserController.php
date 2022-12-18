@@ -30,12 +30,8 @@ class UserController extends Controller
             return response()->json($validator->errors(), 400);
         }
         //find departemen by ID
-        $user= User::findOrFail($user->id);
-        return new UserResource(
-            true,
-            'List Data User',
-            $user
-        );
+        $user= User::find($user->id);
+
         if ($user) {
 
             //update departemen

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class UpdateController extends Controller
 {
@@ -14,7 +15,6 @@ class UpdateController extends Controller
         $validator = Validator::make($request->all(), [
             'name'      => 'required',
             'email'     => 'required|email|unique:users',
-            'password'  => 'required|min:8|confirmed'
         ]);
 
         //response error validation
@@ -23,7 +23,7 @@ class UpdateController extends Controller
         }
 
         //find departemen by ID
-        $user= User::findOrFail($user->id);
+        $user= User::find($user->id);
 
         if ($user) {
 
@@ -33,7 +33,6 @@ class UpdateController extends Controller
                 'email'     => $request->email,
                 'password'  => Hash::make($request->password)
             ]);
-
             return response()->json([
                 'success' => true,
                 'message' => 'User Updated',
