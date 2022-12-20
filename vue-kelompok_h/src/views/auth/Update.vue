@@ -10,6 +10,8 @@
                         <ul class="list-group">
                             <router-link :to="{name: 'dashboard'}"
                                 class="list-group-item text-dark text-decoration-none">DASHBOARD</router-link>
+                            <router-link :to="{name: 'buku.index'}"
+                                class="list-group-item text-dark text-decoration-none">BUKU</router-link>
                             <li @click.prevent="logout" class="list-group-item text-dark text-decoration-none"
                                 style="cursor:pointer">LOGOUT</li>
                         </ul>
