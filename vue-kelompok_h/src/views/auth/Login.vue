@@ -39,6 +39,10 @@
                 LOGIN
               </button>
             </form>
+            <label>Belum punya akun?</label>
+            <label>Silahkan registrasi dulu</label>
+            <router-link :to="{ name: 'register' }" class="btn btn-outline-primary" href=""
+            >Register</router-link>
           </div>
         </div>
       </div>

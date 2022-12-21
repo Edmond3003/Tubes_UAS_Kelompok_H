@@ -24,6 +24,22 @@
                 </div>
               </div>
               <div class="form-group mb-3">
+                <label class="form-label">Jenis Buku</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  v-model="buku.jenis_buku"
+                  placeholder="Masukkan jenis buku"
+                />
+                <!-- validation -->
+                <div
+                  v-if="validation.jenis_buku"
+                  class="mt-2 alert alert-danger"
+                >
+                  {{ validation.jenis_buku[0] }}
+                </div>
+              </div>
+              <div class="form-group mb-3">
                 <label for="content" class="form-label">Genre</label>
                 <input
                   class="form-control"

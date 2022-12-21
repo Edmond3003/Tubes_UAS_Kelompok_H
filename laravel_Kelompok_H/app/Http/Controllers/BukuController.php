@@ -35,9 +35,9 @@ class BukuController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'judul_buku' => 'required',
-            'pengarang' => 'required',
-            'penerbit' => 'required',
-            'harga' => 'required'
+            'jenis_buku' => 'required',
+            'genre_buku' => 'required',
+            'harga_buku' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -46,9 +46,9 @@ class BukuController extends Controller
 
         $buku = Buku::create([
             'judul_buku' => $request->judul_buku,
-            'pengarang' => $request->pengarang,
-            'penerbit' => $request->penerbit,
-            'harga' => $request->harga
+            'jenis_buku' => $request->jenis_buku,
+            'genre_buku' => $request->genre_buku,
+            'harga_buku' => $request->harga_buku
         ]);
         return new BukuResource(true, 'Data Buku
         Berhasil Ditambahkan!', $buku);
@@ -85,9 +85,9 @@ class BukuController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'judul_buku' => 'required',
-            'pengarang' => 'required',
-            'penerbit' => 'required',
-            'harga' => 'required'
+            'jenis_buku' => 'required',
+            'genre_buku' => 'required',
+            'harga_buku' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -101,9 +101,9 @@ class BukuController extends Controller
             //update buku
             $buku->update([
                 'judul_buku' => $request->judul_buku,
-                'pengarang' => $request->pengarang,
-                'penerbit' => $request->penerbit,
-                'harga' => $request->harga
+                'jenis_buku' => $request->jenis_buku,
+                'genre_buku' => $request->genre_buku,
+                'harga_buku' => $request->harga_buku
             ]);
 
             return response()->json([

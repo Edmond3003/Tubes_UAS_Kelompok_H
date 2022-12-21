@@ -10,7 +10,7 @@
         <div class="card border-0 rounded shadow">
           <div class="card-body">
             <router-link
-              :to="{ name: 'wishlist.create' }"
+              :to="{ name: 'buku.create' }"
               class="btn btn-md btn-success"
               >TAMBAH BUKU</router-link
             >

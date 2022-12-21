@@ -24,13 +24,13 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="(wishlist, id) in wishlists" :key="id">
-                  <td>{{ wishlist.buku.judul_buku }}</td>
-                  <td>{{ wishlist.keterangan }}</td>
-                  <td>
+                <tr v-for="(wishlist, id) in wishlists" :key="id" >
+                  <td v-if="wishlist.id_user == id_user">{{ wishlist.buku.judul_buku }}</td>
+                  <td v-if="wishlist.id_user == id_user">{{ wishlist.keterangan }}</td>
+                  <td v-if="wishlist.id_user == id_user">
                     {{ wishlist.status == 0 ? "Belum Dibeli" : "Dibeli" }}
                   </td>
-                  <td class="text-center">
+                  <td class="text-center" v-if="wishlist.id_user == id_user">
                     <router-link
                       :to="{
                         name: 'wishlist.update',
@@ -122,6 +122,7 @@ export default {
     //return
     return {
       wishlists,
+      id_user,
       logout,
       wishlistDelete,
     };
