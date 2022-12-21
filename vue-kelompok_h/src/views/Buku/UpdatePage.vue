@@ -24,6 +24,22 @@
                 </div>
               </div>
               <div class="form-group mb-3">
+                <label class="form-label">Jenis Buku</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  v-model="buku.jenis_buku"
+                  placeholder="Masukkan jenis buku"
+                />
+                <!-- validation -->
+                <div
+                  v-if="validation.jenis_buku"
+                  class="mt-2 alert alert-danger"
+                >
+                  {{ validation.jenis_buku[0] }}
+                </div>
+              </div>
+              <div class="form-group mb-3">
                 <label for="content" class="form-label">Genre</label>
                 <input
                   class="form-control"
@@ -123,17 +139,17 @@ export default {
     function update() {
       //define variable
       let judul_buku = buku.judul_buku;
-      let pengarang = buku.pengarang;
-      let penerbit = buku.penerbit;
-      let harga = buku.harga;
+      let jenis_buku = buku.jenis_buku;
+      let genre_buku = buku.genre_buku;
+      let harga_buku = buku.harga_buku;
 
       //send server with axios
       axios
         .put(`http://localhost:8000/api/bukus/${route.params.id}`, {
           judul_buku: judul_buku,
-          pengarang: pengarang,
-          penerbit: penerbit,
-          harga: harga,
+          jenis_buku: jenis_buku,
+          genre_buku: genre_buku,
+          harga_buku: harga_buku,
         })
         .then(() => {
           //redirect ke halaman login
