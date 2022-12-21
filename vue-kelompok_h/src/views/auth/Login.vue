@@ -39,10 +39,6 @@
                 LOGIN
               </button>
             </form>
-            <label>Belum punya akun?</label>
-            <label>Silahkan registrasi dulu</label>
-            <router-link :to="{ name: 'register' }" class="btn btn-outline-primary" href=""
-            >Register</router-link>
           </div>
         </div>
       </div>
@@ -92,7 +88,7 @@ export default {
 
             //redirect ke halaman dashboard
             return router.push({
-              name: "wishlist.index",
+              name: "dashboard",
             });
           }
 

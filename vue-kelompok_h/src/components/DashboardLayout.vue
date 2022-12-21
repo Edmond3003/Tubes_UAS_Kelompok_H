@@ -75,7 +75,7 @@ export default {
 
             //redirect ke halaman login
             return router.push({
-              name: "login",
+              name: "welcome",
             });
           }
         })
