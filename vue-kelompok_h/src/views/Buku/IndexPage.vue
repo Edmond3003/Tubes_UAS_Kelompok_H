@@ -41,16 +41,16 @@
                       EDIT</router-link
                     >
                     <button
+                      @click.prevent="beli(buku.id)"
+                      class="btn btn-sm btn-success ml-1"
+                    >
+                      BELI
+                    </button>
+                    <button
                       @click.prevent="bukuDelete(buku.id)"
                       class="btn btn-sm btn-danger ml-1"
                     >
                       DELETE
-                    </button>
-                    <button
-                      @click.prevent="beli(buku.id)"
-                      class="btn btn-sm btn-danger ml-1"
-                    >
-                      beli
                     </button>
                   </td>
                 </tr>
@@ -115,7 +115,7 @@ export default {
           router.push({
             name: "transaksi.index",
           });
-        })
+        });
     }
     function logout() {
       //logout
