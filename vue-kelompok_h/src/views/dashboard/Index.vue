@@ -1,38 +1,6 @@
 <template>
   <div class="container-fluid mt-5">
     <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            MAIN MENU
-            <hr />
-            <ul class="list-group">
-              <router-link
-                :to="{ name: 'dashboard' }"
-                class="list-group-item text-dark text-decoration-none"
-                >DASHBOARD</router-link
-              >
-              <router-link
-                :to="{ name: 'buku.index' }"
-                class="list-group-item text-dark text-decoration-none"
-                >BUKU</router-link
-              >
-              <router-link
-                :to="{ name: 'wishlist.index' }"
-                class="list-group-item text-dark text-decoration-none"
-                >WISHLIST</router-link
-              >
-              <li
-                @click.prevent="logout"
-                class="list-group-item text-dark text-decoration-none"
-                style="cursor: pointer"
-              >
-                LOGOUT
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
       <div class="col-md-8">
         <div class="card">
           <div class="card-body">

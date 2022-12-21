@@ -88,7 +88,7 @@ export default {
 
             //redirect ke halaman dashboard
             return router.push({
-              name: "dashboard",
+              name: "wishlist.index",
             });
           }
 
