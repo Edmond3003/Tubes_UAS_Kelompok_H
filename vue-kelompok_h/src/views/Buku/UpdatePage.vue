@@ -4,7 +4,7 @@
       <div class="col-md-12">
         <div class="card border-0 rounded shadow">
           <div class="card-body">
-            <h4>EDIT WISHLIST</h4>
+            <h4>EDIT BUKU</h4>
             <hr />
             <form @submit.prevent="update">
               <div class="form-group mb-3">
