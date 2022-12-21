@@ -38,6 +38,11 @@
                 >WISHLIST</router-link
               >
             </li>
+            <li class="nav-item">
+              <router-link :to="{ name: 'transaksi.index' }" class="nav-link"
+                >TRANSAKSI</router-link
+              >
+            </li>
             <li
               @click.prevent="logout"
               class="list-group-item text-dark text-decoration-none"

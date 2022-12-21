@@ -63,6 +63,16 @@ const routes = [
         name: "wishlist.update",
         component: () => import("@/views/Wishlist/UpdatePage.vue"),
       },
+      {
+        path: "/transaksiIndex",
+        name: "transaksi.index",
+        component: () => import("@/views/Transaksi/IndexPage.vue"),
+      },
+      {
+        path: "/transaksiUpdate",
+        name: "transaksi.update",
+        component: () => import("@/views/Transaksi/UpdatePage.vue"),
+      },
     ],
   },
 ];

@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_buku');
+            $table->foreign('id_buku')->references('id')->on('bukus');
+            $table->unsignedBigInteger('id_user');
+            $table->foreign('id_user')->references('id')->on('users');
             $table->timestamps();
         });
     }

@@ -22,5 +22,6 @@ Route::post('/register', [RegisterController::class, 'register']);
 Route::apiResource('/users',UserController::class);
 Route::apiResource('/bukus',BukuController::class);
 Route::apiResource('/wishlists',WishlistController::class);
+Route::apiResource('/transaksis',TransaksiController::class);
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth:api');

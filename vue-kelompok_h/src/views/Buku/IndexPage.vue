@@ -46,6 +46,12 @@
                     >
                       DELETE
                     </button>
+                    <button
+                      @click.prevent="beli(buku.id)"
+                      class="btn btn-sm btn-danger ml-1"
+                    >
+                      beli
+                    </button>
                   </td>
                 </tr>
               </tbody>
@@ -63,6 +69,7 @@ import { useRouter } from "vue-router";
 export default {
   setup() {
     const token = localStorage.getItem("token");
+    const id_user = localStorage.getItem("id");
     const router = useRouter();
     //reactive state
     let bukus = ref([]);
@@ -96,6 +103,20 @@ export default {
           console.log(error.response.data);
         });
     }
+    function beli(id) {
+      let id_buku = id;
+      axios
+        .post("http://localhost:8000/api/transaksis", {
+          id_user: id_user,
+          id_buku: id_buku,
+        })
+        .then(() => {
+          //redirect ke post index
+          router.push({
+            name: "transaksi.index",
+          });
+        })
+    }
     function logout() {
       //logout
       axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -121,6 +142,7 @@ export default {
       bukus,
       logout,
       bukuDelete,
+      beli,
     };
   },
 };
