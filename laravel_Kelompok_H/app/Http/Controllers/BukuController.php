@@ -16,7 +16,7 @@ class BukuController extends Controller
     public function index()
     {
         $buku = Buku::latest()->get();
-        //render view with posts
+
         return new BukuResource(
             true,
             'List Data Buku',
@@ -62,7 +62,7 @@ class BukuController extends Controller
      */
     public function show($id)
     {
-        //find post by ID
+
         $buku = Buku::findOrfail($id);
 
         //make response JSON
@@ -113,7 +113,7 @@ class BukuController extends Controller
             ], 200);
         }
 
-        //data departemen not found
+
         return response()->json([
             'success' => false,
             'message' => 'Departemen Not Found',
@@ -140,7 +140,7 @@ class BukuController extends Controller
             ], 200);
         }
 
-        //data departemen not found
+
         return response()->json([
             'success' => false,
             'message' => 'Buku Not Found',

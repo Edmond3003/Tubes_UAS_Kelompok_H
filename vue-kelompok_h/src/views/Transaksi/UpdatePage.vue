@@ -40,10 +40,10 @@
       //inisialisasi vue router on Composition API
       const router = useRouter();
       const route = useRoute();
-      //state validation
+      
       const validation = ref([]);
       let bukus = ref([]);
-      //state user
+      
       const transaksi = reactive({
         id_buku: "",
       });
@@ -66,7 +66,7 @@
         axios
           .get(`http://localhost:8000/api/transaksis/${route.params.id}`)
           .then((response) => {
-            //assign state departemen with response data
+            
             transaksi.id_buku = response.data.id_buku;
           })
           .catch((error) => {
@@ -94,7 +94,7 @@
             console.log(error.response.data);
           });
       }
-      //method register
+      
       function update() {
         //define variable
         let id_buku = transaksi.id_buku;

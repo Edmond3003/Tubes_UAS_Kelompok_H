@@ -59,7 +59,7 @@ class TransaksiController extends Controller
      */
     public function show($id)
     {
-         //find post by ID
+
          $transaksi = Transaksi::findOrfail($id);
 
          //make response JSON
@@ -92,7 +92,7 @@ class TransaksiController extends Controller
 
         if ($transaksi) {
 
-            //update wishlist
+
             $transaksi->update([
             'id_buku' => $request->id_buku,
             ]);
@@ -104,7 +104,7 @@ class TransaksiController extends Controller
             ], 200);
         }
 
-        //data departemen not found
+
         return response()->json([
             'success' => false,
             'message' => 'Transaksi Not Found',
@@ -131,7 +131,7 @@ class TransaksiController extends Controller
             ], 200);
         }
 
-        //data departemen not found
+
         return response()->json([
             'success' => false,
             'message' => 'Transaksi Not Found',

@@ -63,7 +63,7 @@ export default {
   setup() {
     const id_user = localStorage.getItem("id");
     const token = localStorage.getItem("token");
-    //state departemen
+    
     const wishlist = reactive({
       id_buku: "",
       keterangan: "",
@@ -81,7 +81,7 @@ export default {
       axios
         .get("http://localhost:8000/api/bukus")
         .then((response) => {
-          //assign state posts with response data
+          
           bukus.value = response.data.data;
         })
         .catch((error) => {

@@ -135,7 +135,7 @@ export default {
           console.log(error.response.data);
         });
     }
-    //method register
+    
     function update() {
       //define variable
       let name = user.name;

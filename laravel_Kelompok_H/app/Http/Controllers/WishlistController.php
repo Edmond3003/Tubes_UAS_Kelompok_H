@@ -17,18 +17,7 @@ class WishlistController extends Controller
     public function index()
     {
         $wishlist = Wishlist::with('buku')->latest()->get();
-        //render view with posts
-        return new WishlistResource(
-            true,
-            'List Data Wishlist',
-            $wishlist
-        );
-    }
 
-    public function indexUser($id)
-    {
-        $wishlist = Wishlist::with('buku')->latest()->get();
-        //render view with posts
         return new WishlistResource(
             true,
             'List Data Wishlist',
@@ -49,7 +38,7 @@ class WishlistController extends Controller
             'id_user' => 'required',
             'keterangan' => 'required',
             'status' => 'required'
-            
+
         ]);
 
         if ($validator->fails()) {
@@ -61,7 +50,7 @@ class WishlistController extends Controller
             'id_user' => $request->id_user,
             'keterangan' => $request->keterangan,
             'status' => $request->status
-            
+
         ]);
         return new WishlistResource(true, 'Data Wistlist
         Berhasil Ditambahkan!', $wishlist);

@@ -20,7 +20,7 @@
                 <tbody>
                   <tr v-for="(transaksi, id) in transaksis" :key="id" >
                     <td v-if="transaksi.id_user == id_user">{{ transaksi.buku.judul_buku }}</td>
-                    <td v-if="transaksi.id_user == id_user">{{ transaksi.buku.harga }}</td>
+                    <td v-if="transaksi.id_user == id_user">{{ transaksi.buku.harga_buku }}</td>
                     <td class="text-center" v-if="transaksi.id_user == id_user">
                       <router-link
                         :to="{
@@ -56,7 +56,7 @@
       const token = localStorage.getItem("token");
       const id_user = localStorage.getItem("id");
       const router = useRouter();
-      //reactive state
+      
       let transaksis = ref([]);
       //mounted
       onMounted(() => {
@@ -64,7 +64,7 @@
         axios
           .get(`http://localhost:8000/api/transaksis`)
           .then((response) => {
-            //assign state posts with response data
+            
             transaksis.value = response.data.data;
           })
           .catch((error) => {
@@ -73,7 +73,7 @@
       });
       //method delete
       function bayar(id) {
-        //delete data post by ID
+        
         axios
           .delete(`http://localhost:8000/api/transaksis/${id}`)
           .then(() => {
@@ -82,7 +82,7 @@
               (transaksi) => transaksi.id === id
             );
             if (~index) {
-              // if the post exists in array
+              
               this.transaksis.splice(index, 1);
             }
           })

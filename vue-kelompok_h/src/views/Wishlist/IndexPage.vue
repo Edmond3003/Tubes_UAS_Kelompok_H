@@ -65,7 +65,7 @@ export default {
     const token = localStorage.getItem("token");
     const id_user = localStorage.getItem("id");
     const router = useRouter();
-    //reactive state
+    
     let wishlists = ref([]);
     //mounted
     onMounted(() => {
@@ -82,7 +82,7 @@ export default {
     });
     //method delete
     function wishlistDelete(id) {
-      //delete data post by ID
+      
       axios
         .delete(`http://localhost:8000/api/wishlists/${id}`)
         .then(() => {
